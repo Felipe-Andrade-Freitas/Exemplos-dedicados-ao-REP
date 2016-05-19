@@ -11,8 +11,8 @@ namespace RepTestAPI
     {
         static RepCid rep;
 
-        //public static readonly string repIP = "192.168.1.102"; // iDX
-        public static readonly string repIP = "192.168.2.185"; // iDClass
+        //public static readonly string repIP = "192.168.2.186"; // iDX
+        public static readonly string repIP = "192.168.0.19"; // iDClass
         //public static readonly int repPort = 1818; // iDX
         public static readonly int repPort = 443; // iDClass
         public static readonly string repLogin = "admin";
@@ -29,7 +29,8 @@ namespace RepTestAPI
                 rep = new RepCid();
                 rep.iDClassLogin = repLogin;
                 rep.iDClassPassword = repSenha;
-                Controlid.RepCid.ErrosRep status = rep.Conectar(repIP, repPort, repiDXSenha);
+                rep.iDClassPort = 80; // Define o número da porta que deve ser considerado ser um iDClass (default 443)
+                Controlid.RepCid.ErrosRep status = rep.Conectar(repIP, 80, repiDXSenha); // Manda conectar na porta correta
                 if (status == RepCid.ErrosRep.OK)
                     Console.WriteLine("REP Conectado");
                 else
@@ -61,6 +62,7 @@ namespace RepTestAPI
                 Console.WriteLine("cortes: " + cortes);
                 Console.WriteLine("papel_acumulado: " + papel_acumulado);
                 Console.WriteLine("nsr_atual: " + nsr_atual);
+                Console.WriteLine("Modelo: " + rep.Modelo);
             }
             else
                 Assert.Fail("Não foi possivel ler as informações do REP");

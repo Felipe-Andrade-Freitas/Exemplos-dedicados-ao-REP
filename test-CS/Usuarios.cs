@@ -106,7 +106,14 @@ namespace RepTestAPI
                 Console.WriteLine(PisTemplate +": " + num_tmpls + " templates localizados.");
                 byte[] tmpl_bin;
                 while (rep.LerTemplate(out tmpl_bin))
-                    Console.WriteLine("\t" + Convert.ToBase64String(tmpl_bin));
+                {
+                    string v=""; // para imprimir os 20 primeiros bytes do template
+                    for (int i = 0; i < 20 && i < tmpl_bin.Length; i++)
+                        v += string.Format("{0:X2} ", tmpl_bin[i]);
+
+                    Console.WriteLine("\t" + v + Convert.ToBase64String(tmpl_bin));
+                }
+                    
             }
             else
                 Assert.Inconclusive("Não há PIS registrado para obter um template");
