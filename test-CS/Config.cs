@@ -1,8 +1,6 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Controlid;
-using Controlid.iDClass;
-using System.Threading;
 
 namespace RepTestAPI
 {
@@ -12,7 +10,7 @@ namespace RepTestAPI
         static RepCid rep;
 
         //public static readonly string repIP = "192.168.2.186"; // iDX
-        public static readonly string repIP = "192.168.0.19"; // iDClass
+        public static readonly string repIP = "192.168.2.104"; // iDClass
         //public static readonly int repPort = 1818; // iDX
         public static readonly int repPort = 443; // iDClass
         public static readonly string repLogin = "admin";

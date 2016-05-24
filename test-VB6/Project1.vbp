@@ -1,6 +1,6 @@
 Type=Exe
 Reference=*\G{00020430-0000-0000-C000-000000000046}#2.0#0#C:\Windows\SysWOW64\stdole2.tlb#OLE Automation
-Reference=*\G{2E6553EC-AA8B-40CC-AAB3-7C5314781D63}#1.4#0#..\RepCid\bin\Debug\RepCid.tlb#RepCid
+Reference=*\G{2E6553EC-AA8B-40CC-AAB3-7C5314781D63}#1.10#0#..\..\Gerenciador_REP\RepCid\RepCid\bin\Debug\RepCid.tlb#Comunicação com REP 5.24
 Form=Form1.frm
 Startup="Form1"
 ExeName32="Project1.exe"
