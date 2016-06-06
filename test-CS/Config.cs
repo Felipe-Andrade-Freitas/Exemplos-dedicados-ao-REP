@@ -10,11 +10,11 @@ namespace RepTestAPI
         static RepCid rep;
 
         //public static readonly string repIP = "192.168.2.186"; // iDX
-        public static readonly string repIP = "192.168.2.104"; // iDClass
+        public static readonly string repIP = "192.168.2.187"; // iDClass
         //public static readonly int repPort = 1818; // iDX
         public static readonly int repPort = 443; // iDClass
-        public static readonly string repLogin = "admin";
-        public static readonly string repSenha = "admin";
+        public static readonly string repLogin = "admin"; // user
+        public static readonly string repSenha = "admin"; // password
         public static readonly uint repiDXSenha = 0;
 
         // PIS: Fabio Ferreira
@@ -27,8 +27,8 @@ namespace RepTestAPI
                 rep = new RepCid();
                 rep.iDClassLogin = repLogin;
                 rep.iDClassPassword = repSenha;
-                rep.iDClassPort = 80; // Define o número da porta que deve ser considerado ser um iDClass (default 443)
-                Controlid.RepCid.ErrosRep status = rep.Conectar(repIP, 80, repiDXSenha); // Manda conectar na porta correta
+                //rep.iDClassPort = 80; // Define o número da porta que deve ser considerado ser um iDClass (default 443)
+                Controlid.RepCid.ErrosRep status = rep.Conectar(repIP, repPort, repiDXSenha); // Manda conectar na porta correta
                 if (status == RepCid.ErrosRep.OK)
                     Console.WriteLine("REP Conectado");
                 else
@@ -139,6 +139,23 @@ namespace RepTestAPI
             }
             else
                 Assert.Fail("Erro ao ler configurações de rede");
+        }
+
+        [TestMethod, TestCategory("RepCid")]
+        public void Trocar_Senha()
+        {
+            if (rep.iDClass_WebSenha("password") == true)
+                Console.WriteLine("Alterado");
+            else
+                Console.WriteLine("N Alterado");
+        }
+
+
+        [TestMethod, TestCategory("RepCid")]
+        public void Trocar_Usuario()
+        {
+            if (rep.iDClass_WebUsuario("user"))
+                Console.WriteLine("Alterado");
         }
 
         [TestMethod, TestCategory("RepCid")]
