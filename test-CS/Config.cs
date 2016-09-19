@@ -10,7 +10,7 @@ namespace RepTestAPI
         static RepCid rep;
 
         //public static readonly string repIP = "192.168.2.186"; // iDX
-        public static readonly string repIP = "192.168.2.187"; // iDClass
+        public static readonly string repIP = "192.168.0.19"; // iDClass
         //public static readonly int repPort = 1818; // iDX
         public static readonly int repPort = 443; // iDClass
         public static readonly string repLogin = "admin"; // user
@@ -18,7 +18,7 @@ namespace RepTestAPI
         public static readonly uint repiDXSenha = 0;
 
         // PIS: Fabio Ferreira
-        public static Int64 pisTEST = 012468202319; 
+        public static Int64 pisTEST = 1; //012468202319; 
 
         public static RepCid ConectarREP()
         {

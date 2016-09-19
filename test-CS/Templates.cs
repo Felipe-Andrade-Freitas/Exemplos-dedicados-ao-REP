@@ -12,29 +12,22 @@ namespace RepTestAPI
     [TestClass]
     public class Templates
     {
-        RepCid rep;
-
-        [TestInitialize]
-        public void Conectar()
-        {
-            rep = Config.ConectarREP();
-        }
-
         [TestMethod, TestCategory("RepCid")]
         public void Template_ExtractJoin()
         {
+            RepCid rep = Config.ConectarREP(); // Cria a conexão padrão (veja config.cs)
             byte[][] btResult = new byte[3][];
             for (int i = 1; i <= 3; i++)
             {
-                Bitmap digital = new System.Drawing.Bitmap(@"..\..\dedo" + i + ".bmp");
-                byte[] btRequest = RepCid.GetBytes(digital);
+                Bitmap digital = new Bitmap(@"..\..\dedo" + i + ".bmp");
+                byte[] btRequest = RepCid.GetBytes(digital); // transforme o bitmap em bytes no padrão necessário para ser enviado ao equipamento
 
                 if (!rep.ExtractTemplate(btRequest, digital.Width, digital.Height, out btResult[i - 1]))
                 {
                     Console.WriteLine(rep.LastLog());
                     Assert.Fail("Erro ao extrair Template " + i);
                 }
-                Console.WriteLine("LastQuality: " + RestJSON.LastQuality);
+                Console.WriteLine("LastQuality: " + RestJSON.LastQuality); // somente se for iDClass
                 Console.WriteLine("Template: " + Convert.ToBase64String(btResult[i - 1]));
             }
             byte[] btJoin;

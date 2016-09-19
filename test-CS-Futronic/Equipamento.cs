@@ -1,13 +1,19 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Drawing;
-using System.Linq;
 using System.Runtime.Serialization;
-using System.Text;
 
 namespace TestFutronic
 {
     #region Estruturas a serem usadas para iDAccess / iDClass
+
+    // Para objetos que precisam informar a sessão
+    [DataContract]
+    public abstract class SessionRequest
+    {
+        [DataMember(Name = "session")]
+        public string Session { get; set; }
+    }
 
     // {"login":"admin","password":"admin"}
     [DataContract(Name = "login")]
@@ -68,6 +74,18 @@ namespace TestFutronic
     [DataContract()]
     public class TemplateMergeResult : StatusResult
     {
+        [DataMember(Name = "template")]
+        public string Template;
+    }
+
+    // string cURL = "https://192.168.0.146/template_extract.fcgi?session=" + rep.iDClassSession +"&width=" + digital.Width/3 + "&height=" + digital.Height;
+    // {"quality":3,"template":"SUNSUzIxAAAAagEBAAAAAMUAxQBSAFkAAAAAgDwBJAAsAPcOCAAIAAgAACAFAQApASsFACkFdMaZBABGEonFwQUASRqMqQUASyCJowQAPS+DxcYAREIBAQAAABYAAAAAAgUAAAAAAABFQg=="}
+    [DataContract]
+    public class TemplateResult : StatusResult
+    {
+        [DataMember(Name = "quality")]
+        public int Qualidate;
+
         [DataMember(Name = "template")]
         public string Template;
     }

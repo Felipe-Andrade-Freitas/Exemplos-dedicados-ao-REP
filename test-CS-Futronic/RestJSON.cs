@@ -15,30 +15,6 @@ using System.Drawing.Imaging;
 
 namespace TestFutronic
 {
-    #region Estruturas de uso geral
-
-    // Para objetos que precisam informar a sessão
-    [DataContract]
-    public abstract class SessionRequest
-    {
-        [DataMember(Name = "session")]
-        public string Session { get; set; }
-    }
-
-    // string cURL = "https://192.168.0.146/template_extract.fcgi?session=" + rep.iDClassSession +"&width=" + digital.Width/3 + "&height=" + digital.Height;
-    // {"quality":3,"template":"SUNSUzIxAAAAagEBAAAAAMUAxQBSAFkAAAAAgDwBJAAsAPcOCAAIAAgAACAFAQApASsFACkFdMaZBABGEonFwQUASRqMqQUASyCJowQAPS+DxcYAREIBAQAAABYAAAAAAgUAAAAAAABFQg=="}
-    [DataContract]
-    public class TemplateResult : StatusResult
-    {
-        [DataMember(Name = "quality")]
-        public int Qualidate;
-
-        [DataMember(Name = "template")]
-        public string Template;
-    }
-
-    #endregion 
-
     // REST Services JSON https://msdn.microsoft.com/en-us/library/hh674188.aspx
     // .Net 4.5: JSON https://msdn.microsoft.com/pt-br/library/windows/apps/xaml/hh770289.aspx
     public class RestJSON

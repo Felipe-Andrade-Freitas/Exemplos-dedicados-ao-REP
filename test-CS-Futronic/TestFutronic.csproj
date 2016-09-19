@@ -105,6 +105,12 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Gerenciador_REP\RepCid\RepCid\iDClass\iDClassREP.csproj">
+      <Project>{39f7b62c-d49d-4b2e-a3e0-b40d6b583860}</Project>
+      <Name>iDClassREP</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
