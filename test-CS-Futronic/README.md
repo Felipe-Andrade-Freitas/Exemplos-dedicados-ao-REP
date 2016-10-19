@@ -6,4 +6,4 @@ Inclui leitura da digital e extração de templates.
 
 ### *** ATENÇÃO ***
 
-Extração de templates funciona apenas em iDClass e linha iDAccess. Por usar a API REST, não funciona em iDX.
+A extração de templates funciona somente no REP iDClass e os equipamentos da linha Acesso. Por usar a API REST, portanto não funciona no iDX.
