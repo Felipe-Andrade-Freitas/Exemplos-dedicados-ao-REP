@@ -1,4 +1,4 @@
-![Screenshot](https://pbs.twimg.com/profile_images/436917995495895041/EL1Obo-q_400x400.jpeg)
+![Screenshot](https://www.controlid.com.br/assets/images/content/products/relogio-de-ponto/repidclass_f.jpg)
 
 A Control iD com o intuito de facilitar o desenvolvimento da integração com os softwares de nossos parceiros, desenvolvemos uma documentação completa e facil de utilizar com exemplos em uma variada quantidade de linguagens de programação. 
 
